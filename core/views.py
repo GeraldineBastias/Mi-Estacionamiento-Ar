@@ -3,8 +3,14 @@ from .models import Usuario, Tipo_Estacionamiento, Tipo_Usuario, Estacionamiento
 import base64
 # Create your views here.
 
-def home(request):
-    return render(request, 'core/home.html')
+def home(request,id):
+    sesion = Usuario.objects.get(idUsuario = id)
+
+    contexto = {
+        "sesion":sesion
+    }
+    return render(request, 'core/home.html',contexto)
+
 
 def index(request):
     return render(request, 'core/index.html')
@@ -39,11 +45,27 @@ def registrarUsuario(request):
             nombre = name1, apellidopaterno = apat1, 
             apellidomaterno = amat1, correo = corre1, 
             username = uname1, password = pass1, 
-            celular = tele1, estado = 1, idTipo = idTip)
+            celular = tele1, idTipo = idTip)
 
         
         # messages.success(request, 'Cuenta registrada')
-        return redirect ('home',idTip)
+        return redirect ('home')
     else:
         # messages.error(request, 'El nombre de usuario o correo ya estan ocupados')
-        return redirect ('registro')
+        return redirect ('home')
+
+def login(request):
+    return render(request, 'core/login.html')
+
+def login_app(request):
+    co = request.POST['corre']
+    ps = request.POST['pass']
+
+    try:
+        x = Usuario.objects.get(username = co, password = ps) 
+        sesion = str(ps)
+        return redirect ('home',x.idUsuario)
+ 
+    except Usuario.DoesNotExist:
+        # messages.error(request, 'Usuario y/o clave incorrecta')
+        return redirect ('login')
