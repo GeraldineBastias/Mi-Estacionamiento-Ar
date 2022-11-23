@@ -1,0 +1,142 @@
+
+
+/*IMPORTANDO FUENTES*/
+@font-face {
+    font-family: "Lato" ;
+    src: url(./fonts/lato/Lato-Light.ttf);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+.ImgLogin{
+
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),url('../img/loginImg.jpg');
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+   
+    
+}
+
+.BannerHome{
+    background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)),url('../img/bannerHomee.jpg');
+    height: 150vh;
+    width: 100%;
+    background-size: cover;
+   
+    
+}
+
+
+.containerMain{
+    display: grid;
+    grid-template-columns: repeat(2fr, 1fr);
+    grid-template-rows: minmax(400px, auto);
+    width: 100%;
+    
+}
+
+
+.containerHeader{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 25px;
+    
+}
+
+
+
+.contenedor{
+    max-width: 100%;
+    margin: 0 auto;
+    width: 100%;
+
+}
+
+.item h1{
+    display: grid;
+    border-color: #FFFFFF 100px;
+    grid-template-columns: 700px;
+    grid-template-rows: minmax(1fr, auto);
+    font-family: "Lato";
+    font-weight: lighter;
+    line-height: 4rem;
+    font-size: 2.6rem;  
+    color: #FFFFFF;
+}
+
+.item p{
+    display: grid;
+    grid-template-columns: minmax(400px, 700px);
+    grid-template-rows: minmax(200px, auto);
+    font-size: 25px;
+    color: #FFFFFF;
+    font-family: "Lato";
+    line-height: 2rem;
+    margin: 2rem 0;
+}
+
+
+
+
+/*NAVEGACIÓN*/
+
+nav{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 5rem;
+    padding: .5rem 0 ;
+
+
+}
+
+nav .contenedor{
+    display: flex;
+    margin-left: 25px;
+    margin-right: 25px;
+
+}
+
+.contenedor .containerLeft{
+    display: inherit;
+    align-items: center;
+
+} 
+
+.containerLeft h2{
+    font-family: "Lato";
+    color: #ffffff;
+    font-size: xx-large;
+}
+
+
+.containerlinks{
+    margin-left: 65rem;
+}
+
+
+
+.containerlinks a{
+    margin-right: 2.5rem;
+    color: #ffffff;
+    font-family: "Lato";
+    font-size: 16px;
+    text-transform: capitalize;
+    text-decoration: none;
+    list-style: none;
+    display: inline-block;
+    position: relative;
+}
+
+.carousel{
+    margin-left: 100px;
+    margin-right: 100px;
+}
